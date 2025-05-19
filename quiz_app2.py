@@ -123,7 +123,6 @@ def analyze_personality(answers, traits):
     
     # 生成分析報告
     analysis = f"""
-    ### 您的心理分析結果
 
     **社交風格：{intro_extro}**  
     - 您在社交場合中傾向於 {intro_extro.lower()}。  
@@ -148,7 +147,7 @@ def analyze_personality(answers, traits):
     for i, (q, a) in enumerate(zip(quiz_data, answers)):
         review += f"問題 {i+1}: {q['question']} - 您的選擇: {a}\n"
     
-    return analysis + "\n\n" + review
+    return analysis
 
 # Streamlit 應用程式
 st.title("🧠 心理測驗應用程式")
@@ -187,3 +186,4 @@ else:
             "cautious": 0, "collaborative": 0, "independent": 0
         }
         st.rerun()
+
